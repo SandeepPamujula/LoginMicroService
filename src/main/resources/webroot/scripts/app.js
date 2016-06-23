@@ -168,7 +168,8 @@
 			        		 
                              var temp = [];
                              temp.text = data.data.txt;
-			     temp.sender = data.data.sender[0].userName;
+//			                 temp.sender = data.data.sender[0].userName;
+                             temp.sender = data.data.sender;
                              $log.debug("--> text:"+temp.text);
                              $log.debug( "--> sender:"+temp.sender);
                              $scope.chatMessages.push(temp);
@@ -242,7 +243,8 @@
 			    	$scope.sendMessage = function(chatMessage){
 					$log.debug("Sending "+chatMessage);
 					var msg = { txt :chatMessage,
-					sender : $scope.connectedUsers
+//					sender : $scope.connectedUsers
+                    sender : $scope.globals.currentUser.userName //sande
 					//		 txt.user = "demo"
 					}
 					ws.$emit('chatMessage', msg); // send a message to the websocket server
