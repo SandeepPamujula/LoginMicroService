@@ -366,6 +366,9 @@
              },
              data: blog
         };
+            
+        console.log("blog id: "+$rootScope.globals.currentUser.id);
+        console.log("blog id: "+JSON.stringify($rootScope.globals.currentUser.id));
 
         $http(req)
          .then(function(){
